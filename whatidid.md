@@ -17,3 +17,11 @@ installed bower
     npm install -g bower
 
 bootstrapped mocha by adding a test/test.js file
+
+installed requirejs via bower.
+
+install mocha, grunt, bower
+
+install dependencies:
+    /> npm install
+    /src>bower install

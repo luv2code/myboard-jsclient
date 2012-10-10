@@ -21,3 +21,18 @@ bootstrapped mocha by adding a test/test.js file
 installed requirejs and jquery via bower.
 
 added src/component.json for bower
+
+installed node http-server to use as a file server
+
+    npm install -g http-server
+
+installed html5 boilerplate via bower
+
+    src/>bower install html5-boilerplate --save
+
+then I copied all the h5bp files in docs/usage.md to the root of my web project.
+
+I installed modernizr from bower
+
+    src/>bower install modernizr --save
+And I modified the html5 boilerplate to match my dir structure

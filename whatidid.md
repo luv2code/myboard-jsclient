@@ -18,10 +18,6 @@ installed bower
 
 bootstrapped mocha by adding a test/test.js file
 
-installed requirejs via bower.
+installed requirejs and jquery via bower.
 
-install mocha, grunt, bower
-
-install dependencies:
-    /> npm install
-    /src>bower install
+added src/component.json for bower

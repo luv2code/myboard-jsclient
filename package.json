@@ -1,0 +1,23 @@
+{
+  "name": "myboard-jsclient",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "description": "myboard-js ==========",
+  "main": "grunt.js",
+  "dependencies": {
+    "grunt-contrib-requirejs": "~0.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luv2code/myboard-jsclient"
+  },
+  "author": "Matthew Taylor (@luv2code)",
+  "license": "BSD"
+}

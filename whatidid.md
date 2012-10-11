@@ -36,3 +36,7 @@ I installed modernizr from bower
 
     src/>bower install modernizr --save
 And I modified the html5 boilerplate to match my dir structure
+
+I added a main.js and an app.js and the code in index.html to bootstrap the application
+
+I added jshintignore file to the components directory

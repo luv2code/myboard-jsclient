@@ -40,3 +40,13 @@ And I modified the html5 boilerplate to match my dir structure
 I added a main.js and an app.js and the code in index.html to bootstrap the application
 
 I added jshintignore file to the components directory
+
+installed jshint in an effort to get it to ignore the components dir.  my assumption is that the grunt task does not mind teh
+.jshintignore file.
+
+    npm install jshint -g
+apparently I got it wrong. the .jshintignore file works like .gitignore. IOW, you're supposed to put file paths in it with wild
+cards.
+
+it turns out that it's a tobe implemented feature of gruntjs to allow you to exclude paths in the files array. until then, the
+workaround is to add the ignore file to the src dir and run jshint from there.

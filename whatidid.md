@@ -41,15 +41,17 @@ I added a main.js and an app.js and the code in index.html to bootstrap the appl
 
 I added jshintignore file to the components directory
 
-installed jshint in an effort to get it to ignore the components dir.  my assumption is that the grunt task does not mind teh
-.jshintignore file.
+installed jshint in an effort to get it to ignore the components dir.  my assumption is that the grunt
+task does not mind the .jshintignore file.
 
     npm install jshint -g
-apparently I got it wrong. the .jshintignore file works like .gitignore. IOW, you're supposed to put file paths in it with wild
-cards.
+apparently I got it wrong. the .jshintignore file works like .gitignore. IOW, you're supposed to put
+file paths in it with wild cards.
 
-it turns out that it's a tobe implemented feature of gruntjs to allow you to exclude paths in the files array. until then, the
-workaround is to add the ignore file to the src dir and run jshint from there.
+it turns out that it's a tobe implemented feature of gruntjs to allow you to exclude paths in the files
+array. until then, the workaround is to add the ignore file to the src dir and run jshint from there.
 
 I had to disable cache in the web inspector to get the alert I had put in to turn off
 
+I added the text plugin for require, and started making the ko binding for finding and marrying views
+to viewmodels.

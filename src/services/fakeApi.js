@@ -1,26 +1,33 @@
 define(function () {
     var board = {
-            stickies:[]
+            stickies:[{
+                id:0,
+                content:'Hello World!',
+                x: 0,
+                y: 0,
+                height: 100,
+                width: 100
+            }]
         },
-        stickyId;
+        stickyId = 0;
 
     return {
         board:{
-            get:function () {
-                return board;
+            get:function (cb) {
+                cb(null, board);
             },
             sticky:{
-                get:function (id) {
+                get:function (id, cb) {
                     var sticky, index, len = board.stickies.length;
                     for(index = 0; index < len; index++) {
-                        if(board.stickies[index].id === sticky.id) {
+                        if(board.stickies[index].id === id) {
                             sticky = board.stickies[index];
                             break;
                         }
                     }
-                    return sticky;
+                    cb(null, sticky);
                 },
-                put:function (sticky) {
+                put:function (sticky, cb) {
                     var index, len = board.stickies.length;
                     for(index = 0; index < len; index++) {
                         if(board.stickies[index].id === sticky.id) {
@@ -28,19 +35,22 @@ define(function () {
                             break;
                         }
                     }
+                    cb(null);
                 },
-                post:function (newSticky) {
+                post:function (newSticky, cb) {
                     board.stickies.push(newSticky);
                     newSticky.id = stickyId++;
+                    cb(null, newSticky.id);
                 },
-                delete:function (id) {
+                delete:function (id, cb) {
                     var index, len = board.stickies.length;
                     for(index = 0; index < len; index++) {
-                        if(board.stickies[index].id === sticky.id) {
+                        if(board.stickies[index].id === id) {
                             board.stickies.splice(index,1);
                             break;
                         }
                     }
+                    cb(null);
                 }
             }
         }

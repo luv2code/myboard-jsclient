@@ -50,3 +50,6 @@ cards.
 
 it turns out that it's a tobe implemented feature of gruntjs to allow you to exclude paths in the files array. until then, the
 workaround is to add the ignore file to the src dir and run jshint from there.
+
+I had to disable cache in the web inspector to get the alert I had put in to turn off
+

@@ -1,4 +1,3 @@
-alert("hello from main.js");
 require.config({
     paths: {
         'jquery':'components/jquery/jquery',

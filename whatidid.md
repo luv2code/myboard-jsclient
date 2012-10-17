@@ -58,3 +58,6 @@ to viewmodels.
 
 added bootstrap code to app.js.  then I created the viewmodels and views folders so that the
 ko bind binding could locate things.  I added the bind binding to the body of the page.
+
+looking at making mocha a local dependency along with npm requirejs so that I can run my tests
+from a tests/runner.js file.

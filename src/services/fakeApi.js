@@ -45,7 +45,7 @@ define(['jquery'], function ($) {
                     newSticky.id = ++stickyId;
                     cb(null, newSticky.id);
                 },
-                delete:function (id, cb) {
+                del:function (id, cb) {
                     var index, len = board.stickies.length;
                     for(index = 0; index < len; index++) {
                         if(board.stickies[index].id === id) {

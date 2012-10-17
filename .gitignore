@@ -2,3 +2,4 @@ node_modules
 components
 *.swp
 *.swap
+.idea

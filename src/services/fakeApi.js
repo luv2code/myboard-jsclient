@@ -1,4 +1,4 @@
-define(function () {
+define(['jquery'], function ($) {
     var board = {
             stickies:[{
                 id:0,
@@ -9,12 +9,15 @@ define(function () {
                 width: 100
             }]
         },
-        stickyId = 0;
+        stickyId = 0,
+        clone = function (obj) {
+            return $.extend(true, {}, obj);
+        };
 
     return {
         board:{
             get:function (cb) {
-                cb(null, board);
+                cb(null, clone(board));
             },
             sticky:{
                 get:function (id, cb) {
@@ -25,7 +28,7 @@ define(function () {
                             break;
                         }
                     }
-                    cb(null, sticky);
+                    cb(null, clone(sticky));
                 },
                 put:function (sticky, cb) {
                     var index, len = board.stickies.length;
@@ -39,7 +42,7 @@ define(function () {
                 },
                 post:function (newSticky, cb) {
                     board.stickies.push(newSticky);
-                    newSticky.id = stickyId++;
+                    newSticky.id = ++stickyId;
                     cb(null, newSticky.id);
                 },
                 delete:function (id, cb) {

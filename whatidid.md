@@ -55,3 +55,6 @@ I had to disable cache in the web inspector to get the alert I had put in to tur
 
 I added the text plugin for require, and started making the ko binding for finding and marrying views
 to viewmodels.
+
+added bootstrap code to app.js.  then I created the viewmodels and views folders so that the
+ko bind binding could locate things.  I added the bind binding to the body of the page.

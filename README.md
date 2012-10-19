@@ -10,13 +10,15 @@ requirements:
 * bower
 * jshint
 
+install these node tools:
+
     npm install -g grunt mocha bower jshint
 
-from the root:
+from the root, install build dependencies:
 
     npm install
 
-from /src:
+from /src, install client libraries:
 
     bower install
 

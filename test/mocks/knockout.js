@@ -5,6 +5,9 @@ define(function () {
                 this.value = value;
             }
             return this.value;
+        },
+        observableArray: function(value) {
+            return this.observable(value);
         }
     }
 });

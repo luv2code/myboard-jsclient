@@ -1,8 +1,11 @@
-var assert = require("assert");
+var setup = require("./setup"),
+    rjs = setup.rjs,
+    should = setup.should;
 
-describe('Array', function () {
-    it('should pass', function () {
-        assert.equal(true, true);
-        //assert.equal(true, false);
-    });
+describe('Board View Model', function () {
+   it('should display all notes for the board', function (done) {
+       rjs(['viewModels/BoardViewModel'], function (vm) {
+           done();
+       });
+   });
 });

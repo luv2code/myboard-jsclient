@@ -61,3 +61,5 @@ ko bind binding could locate things.  I added the bind binding to the body of th
 
 looking at making mocha a local dependency along with npm requirejs so that I can run my tests
 from a tests/runner.js file.
+
+attempted to setup requirejs on node for the purposes of running unit tests.

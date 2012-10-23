@@ -9,6 +9,7 @@ describe('Board View Model', function () {
                stickies = vm.stickies();
            stickies.length.should.equal(1);
            stickies[0].content.should.be.a('string');
+           done();
        });
    });
 });

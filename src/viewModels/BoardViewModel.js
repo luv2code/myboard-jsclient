@@ -18,6 +18,7 @@ define(['knockout', 'services/myBoardApi'], function (ko, api) {
         };
 
         api.board.get(function (error, board) {
+            console.log(arguments);
             self.stickies(board.stickies);
         });
     };

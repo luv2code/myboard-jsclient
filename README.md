@@ -12,7 +12,7 @@ requirements:
 
 install these node tools:
 
-    npm install -g grunt mocha bower jshint
+    npm install -g grunt bower jshint phantomjs
 
 from the root, install build dependencies:
 
@@ -24,5 +24,5 @@ from /src, install client libraries:
 
 to test, from root run:
 
-    mocha
+    grunt qunit
 

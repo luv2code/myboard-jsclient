@@ -8,6 +8,10 @@ body{
 div {
     padding: 5px;
 }
+
+.disabled {
+    opacity: 0.5;
+}
 button {
     /*border-top: 1px solid #96d1f8;*/
     background: #666;
@@ -56,4 +60,8 @@ textarea {
 	font-family: Tahoma, sans-serif;
 	background-image: url('../img/cardboard_flat/cardboard_flat.png');
 	background-position: top right;
+}
+
+textarea:disabled {
+    opacity: 0.5;
 }

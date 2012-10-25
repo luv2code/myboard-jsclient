@@ -22,7 +22,7 @@ define(['jquery'], function ($) {
             put:function (sticky, cb) {
 				cbHandler(
 					$.ajax({
-						url: apiUrl + 'sticky/' + id,
+						url: apiUrl + 'sticky/' + sticky.Id,
 						type: 'PUT',
 						data: sticky
 					})

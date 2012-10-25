@@ -26,6 +26,12 @@ define(['jquery'], function ($) {
                 cbHandler(promise, cb);
             },
             del:function (id, cb) {
+                cbHandler(
+                    $.ajax({
+                        url: apiUrl + 'sticky/' + id,
+                        type: 'DELETE'
+                    })
+                , cb);
             }
         }
     };

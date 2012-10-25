@@ -9,7 +9,7 @@ define([
         var sticky = dto || { Id: 'New' },
             self = ko.mapping.fromJS(sticky);
 
-        self.del= function () {
+        self.del = function () {
             if(self.canDelete()) {
                 api.sticky.del(self.Id(), function (error, success) {
                     if(!!error) {

@@ -10,7 +10,10 @@ require.config({
         'services/myBoardApi': 'services/api'
     }
 });
-require(['app', 'knockout'], function (app, ko) {
+require(['app', 'knockout', 'pubsub'], function (app, ko, pubsub) {
     window.ko = ko;
+    pubsub.subscribe('error', function (ev, msg) {
+        console.log(msg);
+    });
     app.start();
 });

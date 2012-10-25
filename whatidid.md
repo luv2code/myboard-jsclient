@@ -75,3 +75,7 @@ changed stickyviewmodel so that it published it's Id on the topic so that the bo
 introduced lodash because I kept finding myself wanting to use map and
 filter and the like.  For instance, I mapped the sticky DTOs to sticky
 ViewModels in the board viewModel.
+
+changed the sticky layout to use a textarea, and added a changed listener to the Content property
+
+added code to change the sticky when the user edits it.

@@ -69,3 +69,5 @@ gave up on mocha, requirejs, and node.  switched to qunit and phantomjs.
 in the test/boardVIewModel.html, I had to wrap the initial require load in an async test to get it to work in phantomjs
 
 now that unit testing is working, I can start doing TDD on the StickyViewModel.
+
+changed stickyviewmodel so that it published it's Id on the topic so that the boardViewModel can update itself.

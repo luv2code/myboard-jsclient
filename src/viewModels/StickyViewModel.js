@@ -1,4 +1,10 @@
-define(['knockout', 'services/myBoardApi', 'knockout.mapping'], function (ko, api) {
+define([
+    'knockout', 
+    'services/myBoardApi', 
+    'pubsub', 
+    './topics',
+    'knockout.mapping'
+], function (ko, api, pubsub, topics) {
     var StickyViewModel = function (dto) {
         var sticky = dto || { Id: 'New' },
             self = ko.mapping.fromJS(sticky);
@@ -7,9 +13,9 @@ define(['knockout', 'services/myBoardApi', 'knockout.mapping'], function (ko, ap
             if(self.canDelete()) {
                 api.sticky.del(self.Id(), function (error, success) {
                     if(!!error) {
-                        //pubsub.publish('error.sticky.delete', error);
+                        pubsub.publishSync(topics.error.sticky.del, error);
                     } else {
-                        //pubsub.publish('sticky.deleted', self.Id());
+                        pubsub.publishSync(topics.sticky.deleted, self.Id());
                     }
                 });
             }

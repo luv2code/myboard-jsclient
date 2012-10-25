@@ -1,4 +1,9 @@
-define(['viewModels/StickyViewModel', 'services/myBoardApi'], function (StickyViewModel, api) {
+define([
+    'viewModels/StickyViewModel', 
+    'services/myBoardApi', 
+    'pubsub',
+    'viewModels/topics'
+], function (StickyViewModel, api, pubsub, topics) {
     return function () {
         module('StickyViewModel');
         
@@ -31,8 +36,12 @@ define(['viewModels/StickyViewModel', 'services/myBoardApi'], function (StickyVi
             equal(false, vm.canDelete());
         });
 
-        test('deleting a sticky should call the api', 3, function () {
-            var vm;
+        test('deleting a sticky should call the api', 4, function () {
+            var vm, msg;
+
+            pubsub.subscribe(topics.sticky.deleted, function (ev, id) {
+                msg = id;
+            });
 
             api.sticky.get('0', function (error, sticky) {
                 equal(error, undefined);
@@ -45,6 +54,7 @@ define(['viewModels/StickyViewModel', 'services/myBoardApi'], function (StickyVi
                 
                 api.board.get(function (error, board) {
                     equal(board.Stickies.length, 0);
+                    ok(msg);
                 });
 
             });

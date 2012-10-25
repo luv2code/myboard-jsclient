@@ -1,6 +1,6 @@
 <div>
     <button data-bind="click: addNew">Add New Sticky</button>
     <ul data-bind="foreach: stickies">
-        <li data-bind="text:Content"></li>
+        <li data-bind="bind:'sticky', data:$data"></li>
     </ul>
 </div>

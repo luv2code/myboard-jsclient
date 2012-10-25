@@ -9,18 +9,23 @@ define(['viewModels/BoardViewModel'], function (BoardViewModel) {
 
         test('displaying initial stickies', 1, function () {
             var vm = new BoardViewModel();
-            equal(1, vm.stickies().length);
+            equal(vm.stickies().length, 1);
         });
 
-        test('add a new sticky', function () {
+        test('add a new sticky', 1, function () {
             var vm = new BoardViewModel();
             vm.addNew();
-            equal(2, vm.stickies().length);
+            equal(vm.stickies().length, 2);
         });
 
-        test('when a sticky is deleted remove it from the collection', 0, function () {
-            //add a stikcy to the board, then call sticky.del();
-            //check to see that the board removed the sticky.
+        test('when a sticky is deleted remove it from the collection', 2, function () {
+            var vm = new BoardViewModel();
+            vm.addNew();
+            equal(vm.stickies().length, 2);
+            
+            vm.stickies()[1].del();
+
+            equal(vm.stickies().length, 1);
         });
     };
 });

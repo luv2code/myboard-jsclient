@@ -71,3 +71,7 @@ in the test/boardVIewModel.html, I had to wrap the initial require load in an as
 now that unit testing is working, I can start doing TDD on the StickyViewModel.
 
 changed stickyviewmodel so that it published it's Id on the topic so that the boardViewModel can update itself.
+
+introduced lodash because I kept finding myself wanting to use map and
+filter and the like.  For instance, I mapped the sticky DTOs to sticky
+ViewModels in the board viewModel.

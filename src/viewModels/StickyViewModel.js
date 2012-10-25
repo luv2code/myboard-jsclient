@@ -12,7 +12,10 @@ define([
             },
             self = ko.mapping.fromJS(sticky);
 
+        self.changing = ko.observable(false);
+
         self.Content.subscribe(function (value) {
+            self.changing(true);
             pubsub.publishSync(topics.sticky.changing, self.Id());
             api.sticky.put(ko.mapping.toJS(self), function (error, success) {
                 if(!!error) {
@@ -20,6 +23,7 @@ define([
                 } else {
                     pubsub.publish(topics.sticky.changed, self.Id());
                 }
+                self.changing(false);
             });
         });
 
@@ -36,7 +40,7 @@ define([
         };
 
         self.canDelete = ko.computed(function () {
-            return this.Id() !== 'New';
+            return this.Id() !== 'New' && !self.changing();
         }, self);
 
         return self;

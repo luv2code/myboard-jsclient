@@ -10,7 +10,16 @@
   <script src="../libs/qunit/qunit.js"></script>
   <!-- Load local lib and tests. -->
   <!--<script src="../src/viewModels/BoardViewModel.js"></script>-->
-  <script src="boardViewModel_test.js"></script>
+  <script data-main="main.js" src="../src/components/requirejs/require.js"></script>
+  <script>
+      asyncTest('ugly hack to get qunit and requirejs to play nice in phantomjs', 0, function () {
+          require(['../test/boardViewModel_test'], function (test) {
+            test();
+            start();
+          });
+      });
+  </script>
+  <!--<script src="boardViewModel_test.js"></script>-->
   <!-- Removing access to jQuery and $. But it'll still be available as _$, if
        you REALLY want to mess around with jQuery in the console. REMEMBER WE
        ARE TESTING YOUR PLUGIN HERE -->

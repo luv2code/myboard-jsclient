@@ -17,5 +17,10 @@ define(['viewModels/BoardViewModel'], function (BoardViewModel) {
             vm.addNew();
             equal(2, vm.stickies().length);
         });
+
+        test('when a sticky is deleted remove it from the collection', 0, function () {
+            //add a stikcy to the board, then call sticky.del();
+            //check to see that the board removed the sticky.
+        });
     };
 });

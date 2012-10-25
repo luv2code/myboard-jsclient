@@ -1,7 +1,7 @@
 define(['jquery'], function ($) {
     var board = {
             Stickies:[{
-                Id:0,
+                Id:'0',
                 Content:'Hello World!',
                 X: 0,
                 Y: 0,
@@ -24,7 +24,7 @@ define(['jquery'], function ($) {
             get:function (id, cb) {
                 var sticky, index, len = board.Stickies.length;
                 for(index = 0; index < len; index++) {
-                    if(board.Stickies[index].id === id) {
+                    if(board.Stickies[index].Id === id) {
                         sticky = board.Stickies[index];
                         break;
                     }
@@ -34,7 +34,7 @@ define(['jquery'], function ($) {
             put:function (sticky, cb) {
                 var index, len = board.Stickies.length;
                 for(index = 0; index < len; index++) {
-                    if(board.Stickies[index].id === sticky.id) {
+                    if(board.Stickies[index].Id === sticky.id) {
                         board.Stickies[index] = sticky;
                         break;
                     }
@@ -43,13 +43,13 @@ define(['jquery'], function ($) {
             },
             post:function (newSticky, cb) {
                 board.Stickies.push(newSticky);
-                newSticky.id = ++stickyId;
-                cb(null, newSticky.id);
+                newSticky.Id = ++stickyId;
+                cb(null, newSticky.Id);
             },
             del:function (id, cb) {
                 var index, len = board.Stickies.length;
                 for(index = 0; index < len; index++) {
-                    if(board.Stickies[index].id === id) {
+                    if(board.Stickies[index].Id === id) {
                         board.Stickies.splice(index,1);
                         break;
                     }

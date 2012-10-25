@@ -6,6 +6,7 @@
     "knockout": "git://github.com/SteveSanderson/knockout#2.2.0rc",
     "knockout.mapping":"https://github.com/SteveSanderson/knockout.mapping.git",
     "html5-boilerplate": "latest",
-    "modernizr": "latest"
+    "modernizr": "latest",
+    "pubsub":"https://github.com/mroderick/PubSubJS.git"
   }
 }

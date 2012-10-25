@@ -20,6 +20,13 @@ define(['jquery'], function ($) {
                 cbHandler(promise, cb);
             },
             put:function (sticky, cb) {
+				cbHandler(
+					$.ajax({
+						url: apiUrl + 'sticky/' + id,
+						type: 'PUT',
+						data: sticky
+					})
+				, cb);
             },
             post:function (newSticky, cb) {
                 var promise = $.post(apiUrl + 'sticky', newSticky);

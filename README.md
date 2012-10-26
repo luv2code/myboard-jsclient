@@ -26,3 +26,4 @@ to test, from root run:
 
     grunt qunit
 
+I kept a dev journal in [whatidid.md] (https://github.com/luv2code/myboard-jsclient/blob/master/whatidid.md)

@@ -1,7 +1,7 @@
-define(['viewModels/BoardViewModel'], function (BoardViewModel) {
+define(['viewModels/BoardViewModel', 'services/myBoardApi'], function (BoardViewModel, api) {
     return function () {
         module('BoardViewModel');
-        
+
         test('constructing a viewmodel', function () {
             var vm = new BoardViewModel();
             ok(vm);
@@ -16,16 +16,18 @@ define(['viewModels/BoardViewModel'], function (BoardViewModel) {
             var vm = new BoardViewModel();
             vm.addNew();
             equal(vm.stickies().length, 2);
+            api.reset();
         });
 
         test('when a sticky is deleted remove it from the collection', 2, function () {
             var vm = new BoardViewModel();
             vm.addNew();
-            equal(vm.stickies().length, 2);
-            
-            vm.stickies()[1].del();
 
+            equal(vm.stickies().length, 2);
+
+            vm.stickies()[1].del();
             equal(vm.stickies().length, 1);
+            api.reset();
         });
     };
 });

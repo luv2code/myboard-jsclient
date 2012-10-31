@@ -2,15 +2,16 @@ define([
     'viewModels/StickyViewModel', 
     'services/myBoardApi', 
     'pubsub',
-    'viewModels/topics'
-], function (StickyViewModel, api, pubsub, topics) {
+    'viewModels/topics',
+    'knockout'
+], function (StickyViewModel, api, pubsub, topics, ko) {
     return function () {
         module('StickyViewModel');
         
         test('constructing a viewmodel', function () {
             var vm = new StickyViewModel();
             ok(vm);
-            equal(vm.Content, undefined);
+            ok(ko.isObservable(vm.Content));
         });
         
         test('populating viewModel from dto', 6, function () {

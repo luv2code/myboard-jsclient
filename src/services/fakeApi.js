@@ -1,5 +1,5 @@
 define(['jquery'], function ($) {
-    var board = {
+    var newBoard = {
             Stickies:[{
                 Id:'0',
                 Content:'Hello World!',
@@ -12,9 +12,13 @@ define(['jquery'], function ($) {
         stickyId = 0,
         clone = function (obj) {
             return $.extend(true, {}, obj);
-        };
+        },
+        board = clone(newBoard);
 
     return {
+        reset: function () { //this method is to reset the store inside a test.
+            board = clone(newBoard);
+        },
         board:{
             get:function (cb) {
                 cb(null, clone(board));

@@ -6,8 +6,8 @@ require.config({
         'knockout.mapping':'components/knockout.mapping/knockout.mapping',
         'pubsub':'components/pubsub/src/pubsub',
         'lodash':'lib/lodash',
-        //'services/myBoardApi': 'services/fakeApi'
-        'services/myBoardApi': 'services/api'
+        'services/myBoardApi': 'services/fakeApi'
+        //'services/myBoardApi': 'services/api'
     }
 });
 require(['app', 'knockout', 'pubsub'], function (app, ko, pubsub) {
